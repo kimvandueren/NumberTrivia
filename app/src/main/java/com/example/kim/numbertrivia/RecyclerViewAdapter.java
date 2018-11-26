@@ -40,8 +40,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         final TriviaItem triviaItem = listTriviaItem.get(position);
-        holder.numberText.setText("23");
-        holder.triviaText.setText("test");
+        holder.numberText.setText(triviaItem.getNumber());
+        holder.triviaText.setText(triviaItem.getText());
     }
 
     @Override
