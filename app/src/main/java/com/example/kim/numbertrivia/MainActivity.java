@@ -61,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        @GET("/random/number?json")
+        @GET("/random?json")
 
-        Call<TriviaItem> getNumberTrivia(@Path("number") int triviaNumber);
+        Call<TriviaItem> getNumberTrivia();
     }
 
     private void requestData() {
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         final Random random = new Random();
         final int triviaNumber = random.nextInt();
 
-        Call<TriviaItem> call = service.getNumberTrivia(triviaNumber);
+        Call<TriviaItem> call = service.getNumberTrivia();
 
         call.enqueue(new Callback<TriviaItem>() {
             @Override
